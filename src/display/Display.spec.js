@@ -30,4 +30,11 @@ describe("testing Display component", () => {
     getByText(/locked/i);
     getByText(/open/i);
   });
+
+  it("should have unlocked and open text when closed and locked are both true", () => {
+    const { getByText } = render(<Display closed={true} locked={true} />);
+
+    getByText(/locked/i);
+    getByText(/closed/i);
+  });
 });
